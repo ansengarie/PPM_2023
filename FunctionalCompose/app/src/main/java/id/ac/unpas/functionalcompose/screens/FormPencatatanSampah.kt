@@ -81,9 +81,11 @@ fun FormPencatatanSampah(onSimpan: (SetoranSampah) -> Unit) {
             contentColor = Purple700
         )
 
-        Row(modifier = Modifier
-            .padding(4.dp)
-            .fillMaxWidth()) {
+        Row(
+            modifier = Modifier
+                .padding(4.dp)
+                .fillMaxWidth()
+        ) {
             Button(modifier = Modifier.weight(5f), onClick = {
                 val item = SetoranSampah(
                     tanggal = tanggal.value.text,
@@ -97,6 +99,20 @@ fun FormPencatatanSampah(onSimpan: (SetoranSampah) -> Unit) {
             }, colors = loginButtonColors) {
                 Text(
                     text = "Simpan",
+                    style = TextStyle(
+                        color = Color.White,
+                        fontSize = 18.sp
+                    ), modifier = Modifier.padding(8.dp)
+                )
+            }
+
+            Button(modifier = Modifier.weight(5f), onClick = {
+                tanggal.value = TextFieldValue("")
+                nama.value = TextFieldValue("")
+                berat.value = TextFieldValue("")
+            }, colors = resetButtonColors) {
+                Text(
+                    text = "Reset",
                     style = TextStyle(
                         color = Color.White,
                         fontSize = 18.sp
